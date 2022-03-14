@@ -305,6 +305,16 @@ class MatomoTracker {
     ));
   }
 
+  static void trackCustom(
+    String? customVariable,
+  ) {
+    var tracker = MatomoTracker();
+    tracker._track(_Event(
+      tracker: tracker,
+      customVariable: customVariable,
+    ));
+  }
+
   void _track(_Event event) {
     _queue.add(event);
   }
