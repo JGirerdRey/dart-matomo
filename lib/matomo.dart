@@ -373,6 +373,7 @@ class _Event {
   final num? taxAmount;
   final num? shippingCost;
   final num? discountAmount;
+  final String? customVariable;
 
   late DateTime _date;
 
@@ -391,6 +392,7 @@ class _Event {
     this.taxAmount,
     this.shippingCost,
     this.discountAmount,
+    this.customVariable,
   }) {
     _date = DateTime.now().toUtc();
   }
@@ -484,6 +486,12 @@ class _Event {
     }
     if (discountAmount != null) {
       map['ec_dt'] = discountAmount;
+    }
+
+    // custom variable with json format
+    // _cvar={"1":["OS","iphone 5.0"],"2":["Matomo Mobile Version","1.6.2"],"3":["Locale","en::en"],"4":["Num Accounts","2"]}
+    if (customVariable != null) {
+      map['_cvar'] = customVariable;
     }
 
     return map;
