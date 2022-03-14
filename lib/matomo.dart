@@ -450,7 +450,7 @@ class _Event {
     map['h'] = _date.hour.toString();
     map['m'] = _date.minute.toString();
     map['s'] = _date.second.toString();
-    map['cdt'] = _date.toIso8601String();
+    //map['cdt'] = _date.toIso8601String();
 
     // Screen Resolution
     map['res'] = '${this.tracker.width}x${this.tracker.height}';
